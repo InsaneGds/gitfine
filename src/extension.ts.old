@@ -1,0 +1,54 @@
+import * as vscode from 'vscode';
+import axios from 'axios';
+
+const token = 'TOKEN';
+
+export function activate(context: vscode.ExtensionContext) {
+	console.log('GitFine is now active!');
+
+	let disposable = vscode.commands.registerCommand('extension.showGitHubStats', async () => {
+		const workspaceFolders = vscode.workspace.workspaceFolders;
+		if (workspaceFolders) {
+			const folderPath = workspaceFolders[0].uri.fsPath;
+			const packageJson = require(`{$folderPath}/package.json`);
+			const repoUrl = packageJson.repository.url;
+
+			if (repoUrl) {
+				const repoDetails = getRepoDetails(repoUrl);
+				const stats = await fetchGitHubStats(repoDetails.owner, repoDetails.repo);
+
+				vscode.window.showInformationMessage('Stars: ${stats.stargazers_count}, Forks: ${stats.forks_count}, Open Issues: ${stats.open_issues_count}');
+			} else {
+				vscode.window.showErrorMessage('There is no repository URL in package.json!')
+			}
+		} else {
+			vscode.window.showErrorMessage('There is no workspace folder!')
+		}
+	});
+
+	context.subscriptions.push(disposable);
+}
+
+function getRepoDetails(repoUrl: string): { owner: string, repo: string } {
+	const match = repoUrl.match(/github\.com\/(.+?)\/(.+?)(\.git)?$/);
+    if (match) {
+        return { owner: match[1], repo: match[2] };
+    } else {
+        throw new Error('Invalid GitHub repository URL.');
+    }
+}
+
+async function fetchGitHubStats(owner: string, repo: string): Promise<any> {
+    const url = `https://api.github.com/repos/${owner}/${repo}`;
+    const headers = { 'Authorization': `token ${token}` };
+
+    try {
+        const response = await axios.get(url, { headers });
+        return response.data;
+    } catch (error) {
+        vscode.window.showErrorMessage('Failed to fetch GitHub stats.');
+        throw error;
+    }
+}
+
+export function deactivate() {}
