@@ -6,8 +6,6 @@ GitFine is a Visual Studio Code extension that allows you to check your repo sta
 - Displays the number of stars, forks, and open issues on your repository.
 -# More features will be coming soon.
 
-\!\[Display the stats\]\(demo/displaycount\)
-
 ## Requirements
 
 1. Go to your [GitHub settings](https://github.com/settings/tokens).
