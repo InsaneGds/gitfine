@@ -1,9 +1,23 @@
-# Change Log
+# Changelog
 
-All notable changes to the "gitfine" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-- Initial release
+- Translations
+- New features
+
+
+
+## Added
+
+### v0.1.4 | 31/07/24
+
+- New extension icon
+- Clearer README
+- Bug support
+- GPL 2.0 license
+
+### v0.1.2 | 29/07/24
+
+- Created Project

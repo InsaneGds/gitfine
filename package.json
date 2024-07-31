@@ -2,8 +2,10 @@
   "name": "gitfine",
   "displayName": "GitFine",
   "description": "Easily check repo stats in your text editor.",
-  "version": "0.1.2",
+  "version": "0.1.4",
+  "repository": {"url": "https://github.com/insanegds/gitfine"},
   "publisher": "DeclanCruise",
+  "icon": "demo/appicon.png",
   "engines": {
       "vscode": "^1.91.1"
   },
@@ -11,7 +13,7 @@
       "Other"
   ],
   "activationEvents": [
-      "onCommand:extension.showGitFine"
+      
   ],
   "main": "./out/extension.js",
   "contributes": {

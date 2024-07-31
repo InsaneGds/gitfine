@@ -4,21 +4,25 @@ GitFine is a Visual Studio Code extension that allows you to check your repo sta
 
 ## Features
 - Displays the number of stars, forks, and open issues on your repository.
--# More features will be coming soon.
 
-## Requirements
+*More features will be coming soon.*
 
-1. Go to your [GitHub settings](https://github.com/settings/tokens).
-2. Click **Generate new token**.
-3. Select the `public_repo` scope.
-4. Generate the token and copy it.
-5. When prompted by the extension, paste your token.
+![Display the stats](demo/demo2.gif)
 
-> WARNING: Do not paste or use this token anywhere else as it can result in safety problems.
+## Installation
 
-> Note: Your token is saved in the VSCode settings for future use
+![How to install](demo/demo1.gif)
 
+1. [Download the extension](https://marketplace.visualstudio.com/items?itemName=DeclanCruise.gitfine)
+2. Go to your [GitHub settings](https://github.com/settings/tokens).
+3. Click **Generate new token**.
+4. Select the `public_repo` scope.
+5. Generate the token and copy it.
+6. When prompted by the extension, paste your token.
 
-`0.1.2`
+> **WARNING:** Do not paste or use this token anywhere else as it can result in safety problems.
 
-`Initial release of GitFine 0.1.2.`
+> **Note:** Your token is saved in the VSCode settings for future use.
+
+*0.1.4*
+*Initial release of GitFine 0.1.4.*
