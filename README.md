@@ -1,6 +1,6 @@
 # GitFine
 
-![App Icon](demo/appicon.png)
+<img src="demo/appicon.png" alt="App Icon" width="200">
 
 
 GitFine is a Visual Studio Code extension that allows you to check your repo stats and more from your code editor.
